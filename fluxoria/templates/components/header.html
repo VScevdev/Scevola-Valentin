@@ -1,0 +1,33 @@
+{% load static %}
+
+<header class="site-header">
+    <div class="box-3d box--header">
+
+        <div class="box-shadow"></div>
+
+        <div class="box-front">
+
+            <div class="header-inner">
+                <h1 class="site-title">
+                    <a href="/" data-text="Fluxoria">Fluxoria</a>
+                </h1>
+
+
+                <div class="{% if user.is_authenticated %}site-logo-logged{% else %}site-logo-not-logged{% endif %}">
+                    <a href="/"><img src="{% static 'img/FL1.2.png' %}" alt=""></a>
+                </div>
+
+
+                <nav class="header-auth" aria-label="Autenticación">
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'accounts:logout' %}">Salir</a>
+                    {% else %}
+                        <a href="{% url 'accounts:login' %}">Iniciar sesión</a>
+                        <a href="{% url 'accounts:register' %}">Registrarse</a>
+                    {% endif %}
+                </nav>
+
+            </div>
+        </div>
+    </div>
+</header>

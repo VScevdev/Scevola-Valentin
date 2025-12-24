@@ -1,0 +1,341 @@
+/* =========================
+   FONT FACE (GLOBAL)
+   ========================= */
+
+@font-face {
+    font-family: "CPMono";
+    src: url("../fonts/CPMono_v07_Plain.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "CPMono";
+    src: url("../fonts/CPMono_v07_Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "CPMono";
+    src: url("../fonts/CPMono_v07_Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =========================
+   VARIABLES GENERALES
+   ========================= */
+
+:root {
+
+    /* Tipografía */
+        --font-ui: "CPMono", system-ui, monospace;
+        --font-brand: "CPMono", monospace;
+
+    /* 🎨 IDENTIDAD (roles claros) */
+
+        --color-bg-main: #e7d8ee; 
+        /* Fondo general del sitio */
+
+        --color-3d-main: #e3dded; 
+        /* Header y cajas 3D principales */
+
+        --color-3d-main-hover: #ded3f3; 
+        /* Cajas en offset */
+    
+        --color-3d-offset-default: #ada4ba; 
+        /* Cajas en offset default */
+    
+        --color-3d-footer: #e3dded; 
+        /* Caja 3D del footer */
+    
+        --color-feed: #edeaf3;
+        /* Color fondo feed */
+    
+        --color-3d-feed-shadow: #4365a880;
+        /* Sombra feed */
+    
+        --color-3d-footer-offset: #4365a8;  
+        /* Caja footer offset */
+    
+        --color-3d-sidebar: #f5e9ec; 
+        /* Cajas 3D del sidebar */
+    
+        --color-3d-sidebar-actions-offset: #4365a8; 
+        /* Caja sidebar actions offset */
+    
+        --color-3d-sidebar-top-offset: #ad4e79; 
+        /* Caja sidebar actions offset */
+    
+        --color-3d-shadow: #0000ff2f; 
+        /* Profundidad / sombra 3D */
+    
+        --color-front-box: #ffffff; 
+        /* Texto y caras frontales claras */
+    
+        --color-font-title: #4365a8; 
+        /* Titulo */
+    
+        --color-font-title-ghost: #6d43a8; 
+        /* Titulo fantasma glow */
+    
+        --color-font-title-glow: rgba(158, 32, 99, 0.705); 
+        /* Botones fantasma glow */
+    
+        --color-inset-feed: #e3dded;
+        /* Inset feed */
+    
+        --color-inset-actions: #b1bbde;
+        /* Inset actions */
+    
+        --color-inset-top: #cf9dae;
+        /* Inset top */
+    
+        --color-inset-footer: #b1bbde;
+        /* Inset footer */
+
+        --color-inset-login-dark: #d4b377;
+
+        --color-inset-login-soft: #f5dfa6;
+
+
+    /* 🧱 SUPERFICIES (materiales) */
+
+    --color-surface-light: rgba(255, 255, 255, 0.05);
+    /* Posts, cards, bloques livianos */
+
+    --color-surface-dark: rgba(0, 0, 0, 0.65);
+    /* Soporte, bloques profundos */
+
+
+    /* 🔲 BORDES */
+
+        /* 🔳 Radius */
+    --radius-sm: 0.5px;   /* botones, links */
+    --radius-md: 2px;   /* cards, posts */
+    --radius-lg: 3px;   /* contenedores grandes / 3D */
+
+        /* 🔳 Bordes */
+    --border-width-lg: 3px;
+    --border-width-md: 2px;
+    --border-width-sm: 1px;
+    --border-style: solid;
+    --border-color-soft: rgba(255, 255, 255, 0.15);
+    --border-color-strong: rgb(41, 38, 38);
+
+
+    /* 🕶 3D OFFSETS */
+
+    --shadow-offset-sm: 8px;
+    --shadow-offset-md: 12px;
+
+    /* TEXTO – CONTORNOS / GLOW */
+
+    /* Contorno fuerte tipo outline (legible sobre fondos complejos) */
+    --text-shadow-strong:
+        -1px -1px 0 rgba(0, 0, 0, 0.9),
+         1px -1px 0 rgba(0, 0, 0, 0.9),
+        -1px  1px 0 rgba(0, 0, 0, 0.9),
+         1px  1px 0 rgba(0, 0, 0, 0.9);
+
+    /* Hover: contorno + glow suave */
+    --text-shadow-hover-actions:
+        -10px 0 18px var(--color-font-title-glow),
+        10px 0 18px var(--color-font-title-glow);
+        
+
+    --text-shadow-title:
+        -1.25px -1.25px 0 var(--color-font-title-glow),
+         1.25px -1.25px 0 var(--color-font-title-glow),
+        -1.25px  1.25px 0 var(--color-font-title-glow),
+         1.25px  1.25px 0 var(--color-font-title-glow);
+
+    --text-shadow-title-hover:
+        -1.25px -1.25px 0 var(--color-font-title-glow),
+        1.25px -1.25px 0 var(--color-font-title-glow),
+        -1.25px  1.25px 0 var(--color-font-title-glow),
+        1.25px  1.25px 0 var(--color-font-title-glow),
+
+        -7px -5px 12px var(--color-3d-offset-default),
+        7px 5px 12px var(--color-3d-offset-default),
+        7px -5px 12px var(--color-3d-offset-default),
+        -7px 5px 12px var(--color-3d-offset-default);
+
+    --img-shadow-button-hover:
+        -96px -32px 48px -64px var(--color-font-title-glow),
+        96px 32px 48px -64px var(--color-font-title-glow),
+        -96px 32px 48px -64px var(--color-font-title-ghost),
+        96px -32px 48px -64px var(--color-font-title-ghost),
+        -96px 96px 48px -64px var(--color-3d-footer-offset),
+        96px -96px 48px -64px var(--color-3d-footer-offset);
+
+    --feed-shadow-3d:
+        -27px 24px 48px var(--color-3d-feed-shadow);
+
+    --inset-shadow-feed:
+        0px 0px 2px 10px var(--color-inset-feed) inset;
+
+    --inset-shadow-actions:
+        0px 0px 2px 10px var(--color-inset-actions) inset;
+
+    --inset-shadow-top:
+        0px 0px 2px 10px var(--color-inset-top) inset;
+
+    --inset-shadow-footer:
+        0px 0px 2px 10px var(--color-inset-footer) inset;
+
+
+    /* Motion */
+    --motion-fast: 0.18s;
+    --motion-base: 0.35s;
+    --motion-slow: 0.6s;
+    --motion-ultraslow: 1.2s;
+
+    --ease-premium: cubic-bezier(.22, 1, .36, 1);
+}
+
+    /* Sidebar Actions Width */
+
+.sidebar {
+    --sidebar-action-width: 100%;
+}
+
+/* =========================
+   RESET BÁSICO
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--color-bg-main);
+    color: var(--color-front-box);
+    font-family: system-ui, sans-serif;
+}
+
+/* =========================
+   MOTOR 3D (GENÉRICO)
+   ========================= */
+
+.box-3d {
+    position: relative;
+    width: 100%;
+}
+
+.box-shadow {
+    position: absolute;
+    inset:
+        var(--inset-top)
+        var(--inset-right)
+        var(--inset-bottom)
+        var(--inset-left);
+    background: var(--shadow-color, var(--color-3d-offset-default));
+    transform: translate(var(--dx), var(--dy));
+    outline: var(--border-width-lg) var(--border-style) var(--border-color-strong);
+    border-radius: var(--radius-sm);
+    z-index: 0;
+}
+
+.box-front {
+    position: relative;
+    background: var(--front-color);
+    border-radius: var(--radius-md);
+    z-index: 1;
+}
+
+/* =========================
+   VARIANTES 3D
+   ========================= */
+
+/* ----- Header ----- */
+.box--header {
+    --dx: 0px;
+    --dy: -24px;
+
+    --inset-top: -0.33rem;
+    --inset-right: -1.5rem;
+    --inset-bottom: 0px;
+    --inset-left: -1.5rem;
+
+    --front-color: var(--color-3d-main);
+}
+
+/* ----- Sidebar Actions ----- */
+.box--sidebar-actions {
+    --dx: 0px;
+    --dy: -24px;
+
+    --inset-top: 0rem;
+    --inset-right: -24px;
+    --inset-bottom: 12px;
+    --inset-left: -24px;
+
+    --front-color: var(--color-3d-main);
+    --shadow-color: var(--color-3d-sidebar-actions-offset);
+}
+
+/* ----- Sidebar Top ----- */
+.box--sidebar-top {
+    --dx: 24px;
+    --dy: 36px;
+
+    --inset-top: 0rem;
+    --inset-right: 0rem;
+    --inset-bottom: 0.75rem;
+    --inset-left: 0rem;
+
+    --front-color: var(--color-3d-main);
+    --shadow-color: var(--color-3d-sidebar-top-offset);
+}
+
+/* ----- Footer ----- */
+.box--footer {
+    --dx: 0px;
+    --dy: 24px;
+
+    --inset-top: 0px;
+    --inset-right: -1.5rem;
+    --inset-bottom: -0.33rem;
+    --inset-left: -1.5rem;
+
+    --front-color: var(--color-3d-footer);
+    --shadow-color: var(--color-3d-footer-offset);
+}
+
+/* =========================
+   BOTONES INTERACTIVOS (BASE)
+   ========================= */
+
+.header-auth a,
+.sidebar-actions a,
+.sidebar-actions li,
+.sidebar-extra div,
+.sidebar-extra a,
+.sidebar-top a,
+.top-tag,
+.feed-nav a,
+.post-title,
+.feed-search input,
+.top-description,
+img {
+    transition:
+        text-shadow var(--motion-base) var(--ease-premium),
+        transform var(--motion-slow) var(--ease-premium),
+        background-color var(--motion-fast) ease,
+        opacity var(--motion-fast) ease,
+        scale var(--motion-slow) var(--ease-premium),
+        font-size var(--motion-slow) var(--ease-premium),
+        box-shadow var(--motion-ultraslow) var(--ease-premium),
+        letter-spacing var(--motion-slow) var(--ease-premium);
+}
+
+
+
+
+

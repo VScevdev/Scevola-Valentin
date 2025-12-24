@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+{{ post.title }} | Fluxoria
+{% endblock %}
+
+{% block meta_description %}
+{{ post.summary }}
+{% endblock %}
+
+{% block content %}
+<article class="post-detail">
+
+    <header>
+        <h1>{{ post.title }}</h1>
+    </header>
+
+    <div class="post-thumbnail">
+        {% if post.thumbnail %}
+            <img src="{{ post.thumbnail.url }}" alt="{{ post.title }}">
+        {% endif %}
+    </div>
+
+    <div class="post-content">
+        {{ post.content|linebreaks }}
+    </div>
+
+</article>
+
+{% if user == post.author %}
+    <div class="post-btn-box-fake">
+        <a href="{% url 'posts:edit' post.slug %}" class="post-btn-secondary">
+            Editar
+        </a>
+    </div>
+    <br>
+    <div class="post-btn-box-fake">
+        <a href="{% url 'posts:delete' post.slug %}" class="post-btn-secondary">
+            Eliminar
+        </a>
+    </div>
+{% endif %}
+
+{% endblock %}

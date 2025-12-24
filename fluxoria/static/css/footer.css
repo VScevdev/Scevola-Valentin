@@ -1,0 +1,46 @@
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.site-footer {
+    margin-bottom: 2rem;
+    padding: 24px;
+}
+
+.site-footer .box-3d {
+    width: 95%;
+    margin-inline: auto;
+}
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    align-items: center;
+    border: var(--border-width-lg) var(--border-style) var(--border-color-strong);
+    box-shadow: var(--inset-shadow-footer);
+}
+
+.site-footer ul {
+    list-style: none;
+}
+
+.footer-title a,
+.footer-tagline {
+    color: var(--color-surface-dark);
+    text-decoration: none;
+}
+
+.footer-legal a,
+.footer-legal span,
+.footer-nav a {
+    color: var(--color-surface-dark);
+    text-decoration: none;
+}
+
+.footer-legal a:hover,
+.footer-nav a:hover {
+    text-decoration: underline;
+}

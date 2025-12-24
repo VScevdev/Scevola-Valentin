@@ -1,0 +1,16 @@
+/* =========================
+   MAIN LAYOUT
+   ========================= */
+
+.site-main {
+    padding: 2rem 0;
+}
+
+.main-layout {
+    width: 95%;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 70% 25%;
+    justify-content: space-between;
+    align-items: start;
+}

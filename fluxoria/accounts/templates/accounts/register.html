@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="auth-outer-box">
+    <div class="auth-inner-box">
+        <h2>Registrarse</h2>
+
+        {% if form.errors %}
+            <div style="color:red;">
+                {{ form.errors }}
+            </div>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+
+            {{ form.non_field_errors }}
+
+            <p>{{ form.email.label_tag }}<br>{{ form.email }}</p>
+            <p>{{ form.username.label_tag }}<br>{{ form.username }}</p>
+            <p>{{ form.country.label_tag }}<br>{{ form.country }}</p>
+            <p>{{ form.password1.label_tag }}<br>{{ form.password1 }}</p>
+            <p>{{ form.password2.label_tag }}<br>{{ form.password2 }}</p>
+
+            <div class="auth-btn-box"><button type="submit">Crear cuenta</button></div>
+        </form>
+    </div>
+</div>
+{% endblock %}

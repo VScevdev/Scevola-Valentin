@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="auth-outer-box">
+    <div class="auth-inner-box">
+        <h2>Bienvenido a Fluxoria</h2>
+        <h3>Para continuar, por favor,<br> rellena los siguientes datos.</h3>
+
+        <form method="post">
+            {% csrf_token %}
+        
+            {% if messages %}
+                {% for message in messages %}
+                    <p style="color:red;">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        
+            <label>Nombre de Usuario</label>
+            <input
+                type="text"
+                name="username"
+                value="{{ profile.username|default:'' }}"
+                required
+            >
+        
+            <br><br>
+        
+            <label>País</label>
+            <br>
+            <select class="onboarding-country-select" name="country" required>
+                <option value="">Seleccionar país</option>
+                {% for code, name in country_choices %}
+                    <option value="{{ code }}"
+                        {% if profile.country == code %}selected{% endif %}
+                    >
+                        {{ name }}
+                    </option>
+                {% endfor %}
+            </select>
+        
+            <br><br>
+            <div class="auth-btn-box"><button type="submit">Continuar</button></div>
+        </form>
+    </div>
+</div>
+{% endblock %}

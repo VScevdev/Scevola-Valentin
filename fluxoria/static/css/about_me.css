@@ -1,0 +1,57 @@
+/* Contenedor principal */
+.about-me-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 2rem;
+    background-color: var(--color-feed); /* color de fondo usando variable */
+    border-radius: var(--radius-lg); /* variable de base.css */
+    box-shadow: 0 4px 12px var(--color-3d-shadow); /* sombra usando variable */
+    font-family: var(--font-ui); /* tipografía de base.css */
+    color: var(--color-font-title); /* color de texto principal */
+}
+
+/* Título principal */
+.about-me-container h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--color-font-title); /* color variable */
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+    text-shadow: var(--text-shadow-title); /* contorno/glow del título */
+}
+
+/* Secciones de información */
+.profile-info, .more-info, .contact {
+    margin-bottom: 2rem;
+}
+
+/* Párrafos */
+.profile-info p, .more-info p, .contact p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+    color: var(--color-surface-dark); /* texto sobre fondo */
+}
+
+/* Subtítulos de secciones */
+.more-info h2, .contact h2 {
+    color: var(--color-font-title-ghost);
+    margin-bottom: 0.8rem;
+    border-bottom: 2px solid var(--color-font-title);
+    display: inline-block;
+    padding-bottom: 3px;
+    text-shadow: var(--text-shadow-strong);
+}
+
+/* Efecto hover para enlaces (si hay) */
+.about-me-container a {
+    color: var(--color-font-title);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--motion-fast) var(--ease-premium);
+}
+
+.about-me-container a:hover {
+    text-decoration: underline;
+    color: var(--color-font-title-glow);
+}

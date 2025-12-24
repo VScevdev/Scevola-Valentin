@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="post-outer-box">
+    <div class="post-inner-box">
+        <h1>
+            {% if is_edit %}
+                Editar post
+            {% else %}
+                Crear post
+            {% endif %}
+        </h1>
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="form-field">
+                {{ form.title.label_tag }}
+                {{ form.title }}
+                {{ form.title.errors }}
+            </div>
+        
+            <div class="form-field">
+                {{ form.content.label_tag }}
+                <br>
+                {{ form.content }}
+                {{ form.content.errors }}
+            </div>
+        
+            <div class="form-field">
+                {{ form.category.label_tag }}
+                <br>
+                {{ form.category }}
+                {{ form.category.errors }}
+            </div>
+        
+            <div class="form-field">
+                {{ form.thumbnail.label_tag }}
+                {{ form.thumbnail }}
+                {{ form.thumbnail.errors }}
+            </div>
+
+            <div class="post-btn-box">
+                <button type="submit">
+                    {% if is_edit %}
+                        Guardar cambios
+                    {% else %}
+                        Publicar
+                    {% endif %}
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}

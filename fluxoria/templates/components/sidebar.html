@@ -1,0 +1,84 @@
+{% load static %}
+
+<aside class="sidebar">
+
+{% if user.is_authenticated %}
+<div class="box-3d box--sidebar-actions">
+<div class="box-shadow"></div>
+<div class="box-front">
+<div class="sidebar-inner">
+<section class="sidebar-actions">
+<ul>
+
+    <li>
+        <a href="{% url 'posts:create' %}" class="sidebar-action">
+            Crear post
+        </a>
+    </li>
+<li><a href="#">Mis suscripciones</a></li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+{% endif %}
+
+<div class="box-3d box--sidebar-top">
+<div class="box-shadow"></div>
+<div class="box-front">
+<div class="sidebar-inner">
+
+
+<section class="sidebar-top">
+<h3 class="sidebar-title">Top</h3>
+
+
+<ul class="sidebar-top-list">
+<li class="top-item">
+<a href="#" class="top-link">
+<span class="top-tag">Anual</span>
+<div class="top-image-slot">
+<img src="{% static 'img/top-anual.jpg' %}" alt="Top anual" loading="lazy">
+</div>
+<div class="top-description">Autor – Post Name</div>
+</a>
+</li>
+
+
+<li class="top-item">
+<a href="#" class="top-link">
+<span class="top-tag">Mensual</span>
+<div class="top-image-slot">
+<img src="{% static 'img/top-mensual.jpg' %}" alt="Top mensual" loading="lazy">
+</div>
+<div class="top-description">Autor – Post Name</div>
+</a>
+</li>
+
+
+<li class="top-item">
+<a href="#" class="top-link">
+<span class="top-tag">Semanal</span>
+<div class="top-image-slot">
+<img src="{% static 'img/top-semanal.jpg' %}" alt="Top semanal" loading="lazy">
+</div>
+<div class="top-description">Autor – Post Name</div>
+</a>
+</li>
+</ul>
+</section>
+
+
+</div>
+</div>
+</div>
+
+
+<div class="sidebar-extra">
+<div class="sidebar-support"><a href="#">Soporte</a></div>
+<div class="sidebar-faq"><a href="#">Preguntas Frecuentes</a></div>
+<div class="sidebar-suggestions"><a href="{% url 'core:about_me' %}">About Me</a></div>
+</div>
+
+
+</aside>

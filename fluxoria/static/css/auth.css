@@ -1,0 +1,48 @@
+.auth-outer-box {
+    justify-self: center;
+    outline: var(--border-width-md) var(--border-style) var(--border-color-strong);
+    border-radius: var(--radius-sm);
+    color: var(--color-surface-dark);
+    font-family: var(--font-ui);
+    box-shadow: inset 0px 0px 0px 16px var(--color-inset-login-soft);
+}
+
+.auth-inner-box {
+    box-shadow: inset 0px 0px 0px 10px var(--color-inset-login-dark);
+    padding: 2rem 5rem 4rem;
+}
+
+.auth-outer-box h2 {
+    margin-bottom: 2rem;
+    justify-self: center;
+}
+
+.auth-outer-box h3 {
+    font-size: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+    text-align-last: center;
+}
+
+.auth-outer-box input {
+    margin: auto;
+    width: 100%;
+    padding: 0.33rem;
+}
+
+.onboarding-country-select {
+    width: 100%;
+    padding: 0.33rem;
+    cursor: pointer;
+}
+
+.auth-btn-box {
+    justify-self: center;
+}
+
+.auth-btn-box button{
+    padding: 1rem 5rem;
+    cursor: pointer;
+}

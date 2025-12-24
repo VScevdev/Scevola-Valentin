@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load feed_tags %}
+{% load static %}
+
+{% block title %}
+Fluxoria | Plataforma creativa
+{% endblock %}
+
+{% block meta_description %}
+Descubrí música, arte, escritos y proyectos experimentales en Fluxoria.
+{% endblock %}
+
+{% block content %}
+<div class="main-layout">
+
+    <section class="feed">
+        <nav class="feed-nav" aria-label="Navegación del feed">
+
+            <form class="feed-search" role="search" method="get">
+                <input
+                    type="search" 
+                    name="q" 
+                    placeholder="Buscar por título, contenido, usuario..." 
+                    aria-label="Buscar posts"
+                    value="{{ query|default:'' }}"
+                >
+                {% for c in active_categories %}
+                    <input type="hidden" name="category" value="{{ c }}">
+                {% endfor %}
+            </form>
+            
+            <div class="feed-nav-categories">
+
+                <a href="{% url 'core:home' %}"
+                   class="feed-nav-category {% if not request.GET.category %}is-active{% endif %}">
+                    Todo
+                </a>
+            
+                <a href="{% toggle_category_url 'music' %}"
+                   class="feed-nav-category {% category_active 'music' %}">
+                    Música
+                </a>
+            
+                <a href="{% toggle_category_url 'art' %}"
+                   class="feed-nav-category {% category_active 'art' %}">
+                    Pinturas
+                </a>
+            
+                <a href="{% toggle_category_url 'video' %}"
+                   class="feed-nav-category {% category_active 'video' %}">
+                    Videos
+                </a>
+            
+                <a href="{% toggle_category_url 'writing' %}"
+                   class="feed-nav-category {% category_active 'writing' %}">
+                    Escritos
+                </a>
+            
+                <a href="{% toggle_category_url 'games' %}"
+                   class="feed-nav-category {% category_active 'games' %}">
+                    Juegos
+                </a>
+            
+                <a href="{% url 'core:random' %}"
+                   class="feed-nav-category">
+                    Random post
+                </a>
+            
+            </div>
+        </nav>
+
+        <div class="feed-posts">
+            {% for post in posts %}
+                <article class="post">                    
+                    <a href="{% url 'posts:detail' post.slug %}" class="post-link">
+
+                        <div class="thumbnail-box">
+                            {% if post.thumbnail %}
+                                <div class="feed-thumbnail">
+                                    <img
+                                        src="{{ post.thumbnail.url }}"
+                                        alt="{{ post.title }}"
+                                        loading="lazy">
+                                </div>
+                            {% else %}
+                                <div class="feed-thumbnail-empty">
+                                    <img
+                                        src="{% static 'img/thumbnail_placeholder(recortada)2.png' %}"
+                                        alt="{{ post.title }}"
+                                        loading="lazy">
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="post-box">
+                            <h2 class="post-title">{{ post.title }}</h2>
+                            <p class="post-preview">{{ post.content }}</p>
+                        </div>
+
+                    </a>
+                </article>
+
+            {% empty %}
+                <p class="empty-feed-notification">No hay publicaciones todavía.</p>
+            {% endfor %}
+
+        </div>
+    </section>
+
+
+    {% include 'components/sidebar.html' %}
+
+
+</div>
+{% endblock %}
