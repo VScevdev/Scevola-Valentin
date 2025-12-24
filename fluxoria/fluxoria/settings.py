@@ -79,26 +79,26 @@ WSGI_APPLICATION = 'fluxoria.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-# DATABASE OLD DATABASES = {
-# DATABASE OLD     'default': {
-# DATABASE OLD         'ENGINE': 'django.db.backends.sqlite3',
-# DATABASE OLD         'NAME': BASE_DIR / 'db.sqlite3',
-# DATABASE OLD     }
-# DATABASE OLD }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',  
-        'NAME': 'fluxoria',                    
-        'USER': 'root',
-        'PASSWORD': '7578Zu50ac51.',
-        'HOST': 'localhost',                   
-        'PORT': '3306',                       
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASE LOCAL DATABASES = {
+# DATABASE LOCAL     'default': {
+# DATABASE LOCAL         'ENGINE': 'django.db.backends.mysql',  
+# DATABASE LOCAL         'NAME': 'fluxoria',                    
+# DATABASE LOCAL         'USER': 'root',
+# DATABASE LOCAL         'PASSWORD': '7578Zu50ac51.',
+# DATABASE LOCAL         'HOST': 'localhost',                   
+# DATABASE LOCAL         'PORT': '3306',                       
+# DATABASE LOCAL         'OPTIONS': {
+# DATABASE LOCAL             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+# DATABASE LOCAL         },
+# DATABASE LOCAL     }
+# DATABASE LOCAL }
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
